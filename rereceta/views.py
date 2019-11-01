@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views import generic
-from .models import Receta, Categoria,Image
+from .models import Receta, Categoria, Image, Integrante
 from extra_views import CreateWithInlinesView, UpdateWithInlinesView, InlineFormSetFactory
 
 
@@ -61,3 +61,13 @@ class CategoriaDeleteView(generic.DeleteView):
     model = Categoria
     template_name = "categoria-delete.html"
     success_url = reverse_lazy('rereceta:categoria-index')
+
+class ImagenCreateView(generic.CreateView):
+    model = Image
+    fields = '__all__'
+    template_name = "form-imagen.html"
+
+class IntegranteCreateView(generic.CreateView):
+    model = Integrante
+    fields = '__all__'
+    template_name = "form-integrante.html"

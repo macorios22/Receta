@@ -2,6 +2,23 @@ from django.db import models
 
 # Create your models here.
 
+class Integrante(models.Model):
+    """Model definition for Integrante."""
+    nombre= models.CharField(max_length=50)
+    apellido= models.CharField(max_length=50)
+    correo= models.CharField(max_length=50)
+
+    class Meta:
+        """Meta definition for Integrante."""
+
+        verbose_name = 'Integrante'
+        verbose_name_plural = 'Integrantes'
+
+    def __str__(self):
+        return self.nombre
+
+    def get_absolute_url(self):
+        return u'/receta/create'
 
 class Categoria(models.Model):
     """Model definition for Categoria."""
@@ -46,6 +63,7 @@ class Receta(models.Model):
     imagen= models.ImageField(upload_to="ropa",null=False)
     categoria=models.ForeignKey(Categoria,default=None,on_delete= models.PROTECT)
     imagenes=models.ManyToManyField(Image)
+    integrantes=models.ManyToManyField(Integrante)
     class Meta:
         """Meta definition for proyecto."""
 

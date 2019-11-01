@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="container padding-4 btn btn-primary" href="{% url 'rereceta:update' receta.id %}">Actualizar</a>
+<a class="container padding-4 btn btn-primary" href="{% url 'rereceta:index' %}">Todas las recetas</a>
+<a class="container padding-4 btn btn-primary" href="{% url 'rereceta:delete' receta.id %}">Eliminar</a>
+<li class="list-group-item"><h1>{{ receta.nombre }}</h1>
+   <br>  {{ receta.descripcion }}<br>{{ receta.fecha }}<br> {{ receta.categoria }}<br><img src="{{receta.imagen.url}}" style="max-height: 400px; max-width: 400px;">
+   <h3>Involucrados en la receta:</h3>
+   {% for integrantes in receta.integrantes.all %}
+   {{integrantes.nombre}} {{integrantes.apellido}}<br>
+   {% empty %}
+       <li class="list-group-item">No hay Involucrados</li>
+   {% endfor %}
+</li>
+<li class="list-group-item">
+   {% for imagenes in receta.imagenes.all %}
+    <img src="{{ imagenes.imagen.url }}" style="max-height: 200px; max-width: 200px;">
+   {% empty %}
+       <li class="list-group-item">No hay imagenes.</li>
+   {% endfor %}
+</li>
+{% endblock %}
