@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load bootstrap4 %}
 <a class="container padding-4 btn btn-primary" href="{% url 'rereceta:update' receta.id %}">Actualizar</a>
 <a class="container padding-4 btn btn-primary" href="{% url 'rereceta:index' %}">Todas las recetas</a>
 <a class="container padding-4 btn btn-primary" href="{% url 'rereceta:delete' receta.id %}">Eliminar</a>

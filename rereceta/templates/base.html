@@ -1,5 +1,5 @@
-
-
+{% load bootstrap4 %}
+{% bootstrap_css %}
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -9,8 +9,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="recetas">Recetas<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link active" href="/recetas/rece">Categorias</a>
+                <a class="nav-item nav-link active" href="{% url 'rereceta:index' %}">Recetas<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="{% url 'rereceta:categoria-index' %}">Categorias</a>
               </div>
             </div>
           </nav>
@@ -19,5 +19,5 @@
 {% endblock %}
 
     </div>
-
+  {% bootstrap_javascript jquery='full' %}
 </body>

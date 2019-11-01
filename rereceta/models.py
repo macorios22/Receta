@@ -18,7 +18,7 @@ class Integrante(models.Model):
         return self.nombre
 
     def get_absolute_url(self):
-        return u'/receta/create'
+        return u'/rereceta/create'
 
 class Categoria(models.Model):
     """Model definition for Categoria."""
@@ -35,7 +35,7 @@ class Categoria(models.Model):
         return self.nombre
 
     def get_absolute_url(self):
-        return u'/receta/rece/%d' % self.id
+        return u'/rereceta/categoria/%d' % self.id
 
 class Image(models.Model):
     """Model definition for Image."""
@@ -51,7 +51,7 @@ class Image(models.Model):
         return str(self.imagen.url)
 
     def get_absolute_url(self):
-        return u'/receta/%d' % self.id
+        return u'/rereceta/%d' % self.id
 
 
 class Receta(models.Model):
@@ -74,4 +74,4 @@ class Receta(models.Model):
         return self.nombre
 
     def get_absolute_url(self):
-        return u'/receta/rece/%d' % self.id
+        return u'/rereceta/%d' % self.id
