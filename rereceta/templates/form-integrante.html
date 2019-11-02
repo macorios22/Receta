@@ -1,10 +1,11 @@
+<!-- Esto es un comentario -->
 {% extends 'base.html' %}
 {% block content %}
-{% load bootstrap4 %}
+<!--{% load bootstrap4 %}-->
 <h1>Integrante</h1>
 <form method="post" enctype="multipart/form-data">{% csrf_token %}
 
-    {% bootstrap_form form %}
+  <!--  {% bootstrap_form form %}-->
     {% buttons %}
     <input class="btn btn-primary" type="submit" value="Enviar" />
     {% endbuttons %}
