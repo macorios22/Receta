@@ -1,7 +1,7 @@
 <!-- Esto es un comentario -->
 {% extends 'base.html' %}
 {% block content %}
-<!--{% load bootstrap4 %}-->
+{% load bootstrap4 %}
     <a class="container padding-4 btn btn-primary" href="{% url 'rereceta:create' %}">Nuevo</a>
     <ul class="list-group">
         {% for receta in object_list %}
